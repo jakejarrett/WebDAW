@@ -6,7 +6,7 @@ WebDAW is an open source online digital audio workstation (DAW) based on the
 <a href = https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html target = "blank">Web Audio API </a>.
 </p>
 
-![ScreenShot](https://raw.githubusercontent.com/jakehh/OpenDAW/master/screenshots/landingpage.png)
+![ScreenShot](https://raw.githubusercontent.com/jakehh/WebDAW/master/screenshots/landingpage.png)
 <br />
 
 <h3>WebDAW (OpenDAW Fork)</h3>
