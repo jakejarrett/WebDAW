@@ -3,7 +3,7 @@
 /* eOS Styling */
 
 body, html {
-    font-family: 'Open Sans', 'sans-serif';	
+    font-family: 'Open Sans', 'sans-serif';
     height: 100%;
     overflow-y: hidden;
 }
@@ -93,6 +93,7 @@ body, html {
     border-radius: 0 !important;
     background-color: #dedede;
     position: absolute;
+    padding-left: 15px;
     height: 100% !important;
     border-right: 1px solid #a8a8a8;
     width: 150px;
@@ -155,6 +156,19 @@ body, html {
 .landingpage {
     padding-top: 25%;
     text-align: center;
+}
+
+.titlebar {
+    line-height:15px !important;
+    padding-top: 15px;
+    position: absolute;
+    float: center !important;
+    left: 50%;
+}
+
+.project {
+    margin-top: -5px;
+    font-size: 10px;
 }
 
 /* OpenDAW Styling */
@@ -336,7 +350,7 @@ body {
 
 .scrollable{
     overflow-x: hidden;
-    
+
 }
 
 #trackEffects{
