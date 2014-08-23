@@ -6,6 +6,7 @@ body, html {
     font-family: 'Open Sans', 'sans-serif';
     height: 100%;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .navbar-form {
@@ -430,7 +431,7 @@ div.new-content {
 div.landingpage-content {
     margin-top: 25px;
     text-align: left;
-    padding-left: 45%;
+    padding-left: 40%;
 }
 
 href.landingpage-content {
@@ -499,4 +500,8 @@ href.landingpage-content {
 
 .new-project {
     line-height: 20px;
+}
+
+a #newproject {
+    color: #333333;
 }
