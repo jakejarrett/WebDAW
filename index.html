@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>WebDAW</title>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- <link href="resources/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="resources/css/site.css" rel="stylesheet" media="screen">
+        <!--<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">-->
+
+    </head>
+    <body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav projectnav">
+			  <li class="pull-left closebutton" data-toggle="modal" data-target="#exit"><a href="#exit"><i class="fa fa-times fa-3"></i></a></li>
+			</ul>
+			<ul class="nav navbar-nav landingnav" id="landingpage">
+                <li><a id="newproject" href="#" data-container="body" data-placement="bottom" data-content="New Project" data-trigger="hover"><i class="fa fa-file fa-3"></i></a></li>
+			<li><a id="openproject" href="#" data-container="body" data-placement="bottom" data-content="Open Project" data-trigger="hover"><i class="fa fa-clipboard fa-3"></i></a></li>
+                <li><a id="collaborations" href="#" data-container="body" data-placement="bottom" data-content="Collaborate" data-trigger="hover" data-toggle="modal" data-target="#collaborate"><i class="fa fa-users fa-3"></i></a></li>
+			</ul>
+			
+			<ul class="nav navbar-nav projectnav">
+			<li><a id="playPause" href="#"><i class="fa fa-play fa-3"></i></a></li>
+			<li class="endofcontrols"><a id="stop" href="#"><i class="fa fa-stop fa-3"></i></a></li>
+			<li><a id="undo-recent" href="#"><i class="fa fa-undo fa-3"></i></a></li>
+			<li><a id="redo-recent" href="#"><i class="fa fa-repeat fa-3"></i></a></li>
+			</ul>
+			
+			<!-- Only BPM & Cog/Expand after this 
+			<div class="col-xs-1">
+				<form class="navbar-form" role="search">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="140.00" id="bpm" name="bpm" value="140.00">
+				</div>
+				</form>
+			</div> -->
+			<ul class="nav navbar-nav navbar-right projectnav">
+			<li class="dropdown">
+                <a href="#menus" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars fa-3"></i></a>
+                <ul class="dropdown-menu">
+                <li><a href="#" data-toggle="modal" data-target="#collaborate-start">Add User(s) to Project</a>
+                <li class="divider"></li>
+                <li><a href="bugs.html" target="_blank">Report a Bug</a></li>
+                <li><a href="help.php" target="_blank">Help</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#about">About</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#settings" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog fa-3"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" data-toggle="modal" data-target="#collaborate-start">Add User(s) to Project</a>
+                <li class="divider"></li>
+                <li><a href="/bugs.html" target="_blank">Report a Bug</a></li>
+                <li><a href="/help.php" target="_blank">Help</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#about">About</a></li>
+              </ul>
+			</li>
+			<li id="fullscreen"><a href="#fullscreen"><i class="fa fa-expand fa-3"></i></a></li>
+			</ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav> <!-- End Navigation -->
+		
+		<div class="container-fluid new-content" id="newpage">
+            <ul class="landingpage-content">
+                <li class="landingpage-content"><a id="newproject" href="#"><i class="fa fa-file fa-5x"></i> <h1 class="landingpage-content">New Project</h1></a></li>
+                <li class="landingpage-content"><a id="openproject" href="#"><i class="fa fa-clipboard fa-5x"></i> <h1 class="landingpage-content">Open Project</h1></a></li>
+                <li class="landingpage-content"><a id="collaborations" href="#"><i class="fa fa-users fa-5x"></i> <h1 class="landingpage-content">Collaborate</h1></a></li>
+            </ul>
+		</div>
+		
+        <div class="container-fluid" id="project">
+		  <div class="row menubar" id="menubar">
+			<div class="col-lg-12">
+			  Menu Bar example
+			</div>
+		  </div>
+		  <div class="row dawinner">
+			<div class="col-md-1 sidebar">
+                <ul class="sidebar-list" data-role="listview" class="ui-listview-outer" data-inset="true">
+                    <li data-role="collapsible" data-shadow="false" data-corners="false">
+                        <p class="sidebar-option">Instruments <i class=""></i></p>
+                        <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
+                            <li>Sparrow VSTi broo</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Humans</a></li>
+                    <li data-role="collapsible" data-iconpos="right" data-shadow="false" data-corners="false">
+                        <h2>Fish</h2>
+                        <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
+                            <li><a href="#">Salmon</a></li>
+                            <li>Pollock</li>
+                            <li>Trout</li>
+                        </ul>
+                    </li>
+                </ul>
+			</div>
+			<div class="col-md-10 scrollable dawcontent">10</div>
+			<div class="col-md-1 rightsidebar">right side</div>
+		  </div>
+        </div> <!-- End Content -->
+		
+		<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="aboutLabel">About WebDAW</h4>
+			  </div>
+			  <div class="modal-body">
+				WebDAW is a fork of OpenDAW, to create a more modern UI for a web based DAW (Digital Audio Workstation)
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default">Licenses</button>
+				<button type="button" class="btn btn-primary">Website</button>
+			  </div>
+			</div>
+		  </div>
+		</div> <!-- End About Modal -->
+        
+        <div class="modal fade" id="collaborate" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+            <div class="modal-dialog collaboration">
+                <div class="modal-content collaboration">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="aboutLabel">WebDAW Collaboration - Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        Maybe a table to show a list of Candidates from Searching for {USERNAME}?
+                    </div>
+                    <div class="modal-footer collab-bottom">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="input-group custom-search-form">
+                                        <input type="text" placeholder="Enter username..." class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                        </span>
+                                    </div><!-- /input-group -->
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Collaboration (Landing Page) Modal -->
+		
+		<div class="modal fade" id="exit" tabindex="-1" role="dialog" aria-labelledby="exitLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="exitLabel">Exit WebDAW</h4>
+			  </div>
+			  <div class="modal-body">
+				Are you sure you wish to Exit WebDAW?
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" onclick="closeCurrent()" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			  </div>
+			</div>
+		  </div>
+		</div> <!-- End Exit Modal -->
+		
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+        <script src="resources/src/wavesurfer.js"></script>
+        <script src="resources/src/webaudio.js"></script>
+        <script src="resources/src/drawer.js"></script>
+        <script src="resources/src/scheduler.js"></script>
+        <script src="resources/src/storage.js"></script>
+        <script src="resources/src/jquery.knob.js"></script>
+        <script src="resources/src/recorder.js"></script>
+        <script src="resources/src/effects.js"></script>
+        <script src="resources/src/main.js"></script>
+        <script src="resources/src/vumeter.js"></script>
+		<script>
+		$( "#fullscreen" ).click(function() {
+			if (
+				document.fullscreenElement ||
+				document.webkitFullscreenElement ||
+				document.mozFullScreenElement ||
+				document.msFullscreenElement
+			) {
+				if (document.exitFullscreen) {
+					document.exitFullscreen();
+				}
+				else if (document.mozCancelFullScreen) {
+					document.mozCancelFullScreen();
+				}
+				else if (document.webkitCancelFullScreen) {
+					document.webkitCancelFullScreen();
+				}
+				else if (document.msExitFullscreen) {
+					document.msExitFullscreen();
+				}
+			}
+			else {
+				var docElm = document.documentElement;
+				if (docElm.requestFullscreen) {
+					docElm.requestFullscreen();
+				}
+				else if (docElm.mozRequestFullScreen) {
+					docElm.mozRequestFullScreen();
+				}
+				else if (docElm.webkitRequestFullScreen) {
+					docElm.webkitRequestFullScreen();
+				}
+				else if (docElm.msRequestFullscreen) {
+					docElm.msRequestFullscreen();
+				}
+				
+			}
+		});
+		
+		$( window ).load(function() {
+          $("#newpage").show();
+		  $("#landingpage").show();
+		  $("#project").hide();
+		  $( "#bpm" ).hide();
+		  $(".projectnav").hide();
+		});
+		
+		function closeCurrent(){ 
+          $("#newpage").show();
+		  $("#landingpage").show();
+		  $("#project").hide();
+		  $( "#bpm" ).hide();
+		  $(".projectnav").hide();
+		} 
+		
+		/* $( "#menutoggle" ).click(function() {
+			$( "#menubar" ).toggle();
+			console.log("menu bar toggled");
+		}); */
+		
+		$( "#newproject" ).click(function()  // New Project
+		{
+			$( "#bpm" ).show();
+			$( "#project" ).show();
+			$(".projectnav").show();
+			$("#newpage").hide();
+			$("#landingpage").hide();
+            $( "#menubar" ).hide();
+		});
+		
+        /*                           |
+        |                            |
+        |   Keyboard Shortcuts       |
+        |                           */
+            
+		$('body').keyup(function (e) {
+		console.log(e.keyCode);
+		var key = e.keyCode;
+		/* if(key == 77)  // Toggle Menu Bar
+		  {
+			$( "#menubar" ).toggle();
+		  }
+		  */
+		  if(key == 78)  // New Project
+          {
+              $( "#bpm" ).show();
+              $( "#project" ).show();
+              $(".projectnav").show();
+              $("#newpage").hide();
+              $("#landingpage").hide();
+              $( "#menubar" ).hide();
+          }
+		  
+		  if(key == 79)  // Open Project
+		  {
+			
+		  }
+            
+          if(key == 67)
+          {
+              $("#newpage").show();
+              $("#landingpage").show();
+              $("#project").hide();
+              $( "#bpm" ).hide();
+              $(".projectnav").hide();
+          }
+		});
+        $("#newproject").popover({ trigger: "hover" });
+        $("#openproject").popover({ trigger: "hover" });
+        $("#collaborations").popover({ trigger: "hover" });
+		</script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+	"title": "WebDAW",
+	"tagline": "",
+	"docs_path": "docs",
+	"image": "img/app.png",
+	"theme": "red",
+	"template":"default",
+	"toggle_code": true,
+	"date_modified": true,
+	"repo": "jakehh/WebDAW",
+	"twitter": ["thejakehh", "todaymade"],
+	"google_analytics": "UA-12653604-10",
+	"links": {
+		"Download": "https://github.com/jakehh/webdaw/archive/master.zip",
+        "GitHub Repo": "https://github.com/jakehh/webdaw",
+        "Help/Support/Bugs": "https://github.com/jakehh/webdaw/issues",
+		"Made by Jake Jarrett": "http://www.jrjmedia.net"
+	}
+}
