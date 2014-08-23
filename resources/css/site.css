@@ -93,7 +93,7 @@ body, html {
     border-radius: 0 !important;
     background-color: #dedede;
     position: absolute;
-    padding-left: 15px;
+    padding-left: 50px;
     height: 100% !important;
     border-right: 1px solid #a8a8a8;
     width: 150px;
@@ -434,7 +434,7 @@ a .landingpage-content {
 }
 
 a .landingpage-content .fa {
-color: #333333;
+    color: #333333;
 }
 
 href.landingpage-content {
