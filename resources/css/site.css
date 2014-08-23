@@ -78,7 +78,7 @@ body, html {
 }
 
 .endofcontrols {
-    margin-right: 50px;
+    margin-right: 10px;
 }
 
 .container-fluid {
@@ -149,7 +149,7 @@ body, html {
 .new-content {
     min-height: 100%;
     max-height: 100%;
-    background-color: #dedede;
+    background-color: #ffffff;
     padding-bottom: -60px;
 }
 
@@ -160,7 +160,7 @@ body, html {
 
 .titlebar {
     line-height:15px !important;
-    padding-top: 15px;
+    padding-top: 14px;
     position: absolute;
     float: center !important;
     left: 50%;
@@ -420,37 +420,22 @@ body .collaboration {
 
 div.new-content {
     text-align: center;
-    padding-top: 250px;
+    padding-top: 5%;
 }
 
-ul.landingpage-content {
-    display: inline-block;
+.push-content {
+    margin-bottom: 20px !important;
 }
 
-a .landingpage-content {
-    text-decoration:none;
-    color: #333333;
-    border: 0px;
-}
-
-a .landingpage-content .fa {
-    color: #333333;
+div.landingpage-content {
+    margin-top: 25px;
+    text-align: left;
+    padding-left: 45%;
 }
 
 href.landingpage-content {
     text-decoration:none;
 }
-
-li.landingpage-content {
-    list-style-type: none;
-    padding-bottom: 15px;
-    text-align: left;
-}
-
-h1.landingpage-content {
-    display: inline;
-}
-
 .collab-title {
     text-align: center;
     padding: 0;
@@ -510,4 +495,8 @@ h1.landingpage-content {
     -webkit-border-radius: 6px 0 6px 6px;
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
+}
+
+.new-project {
+    line-height: 20px;
 }

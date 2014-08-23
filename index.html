@@ -74,6 +74,8 @@
               <ul class="dropdown-menu">
                 <li><a href="#" data-toggle="modal" data-target="#collaborate-start">Add User(s) to Project</a>
                 <li class="divider"></li>
+                <li><a href="https://github.com/jakehh/WebDAW"><i class="fa fa-github"></i> Github</a></li>
+                <li class="divider"></li>
                 <li><a href="/bugs.html" target="_blank">Report a Bug</a></li>
                 <li><a href="/help.php" target="_blank">Help</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#about">About</a></li>
@@ -85,11 +87,45 @@
 		</nav> <!-- End Navigation -->
 
 		<div class="container-fluid new-content" id="newpage">
-            <ul class="landingpage-content">
-                <li class="landingpage-content"><a id="newproject" href="#"><i class="fa fa-file fa-5x"></i> <h1 class="landingpage-content">New Project</h1></a></li>
-                <li class="landingpage-content"><a id="openproject" href="#"><i class="fa fa-clipboard fa-5x"></i> <h1 class="landingpage-content">Open Project</h1></a></li>
-                <li class="landingpage-content"><a id="collaborations" href="#"><i class="fa fa-users fa-5x"></i> <h1 class="landingpage-content">Collaborate</h1></a></li>
-            </ul>
+      <h1 class="landing-text">No projects are open yet.</h1>
+      <h4 class="landing-text push-content">Open/Create a project to begin</h4>
+            <div class="landingpage-content">
+                <div class="row">
+                  <a id="newproject" href="#">
+                    <div class="col-md-1">
+                      <i class="fa fa-file fa-5x"></i>
+                    </div>
+                    <div class="col-md-2">
+                      <h3>New Project</h3>
+                      <h4>Start a new project</h4>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="row">
+                  <a id="openproject" href="#">
+                    <div class="col-md-1">
+                      <i class="fa fa-clipboard fa-5x"></i>
+                    </div>
+                    <div class="col-md-2">
+                      <h3>Open Project</h3>
+                      <h4>Open a new project</h3>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="row">
+                  <a id="collaborations" href="#">
+                    <div class="col-md-1">
+                      <i class="fa fa-users fa-5x"></i>
+                    </div>
+                    <div class="col-md-2">
+                      <h3>Collaborate</h3>
+                      <h4>Collaborate with friends</h4>
+                    </div>
+                  </a>
+                </div>
+            </div>
 		</div>
 
         <div class="container-fluid" id="project">
@@ -99,7 +135,7 @@
 			</div>
 		  </div>
 		  <div class="row dawinner">
-			<div class="col-md-1 sidebar">
+			<div class="col-md-2 sidebar">
                 <ul class="sidebar-list" data-role="listview" class="ui-listview-outer" data-inset="true">
                     <li data-role="collapsible" data-shadow="false" data-corners="false">
                         <p class="sidebar-option">Instruments <i class=""></i></p>
@@ -117,7 +153,7 @@
                     </li>
                 </ul>
 			</div>
-			<div class="col-md-10 scrollable dawcontent">10</div>
+			<div class="col-md-9 scrollable dawcontent">10</div>
 			<div class="col-md-1 rightsidebar">right side</div>
 		  </div>
         </div> <!-- End Content -->
