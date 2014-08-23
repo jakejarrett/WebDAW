@@ -36,15 +36,15 @@
 			<li><a id="openproject" href="#" data-container="body" data-placement="bottom" data-content="Open Project" data-trigger="hover"><i class="fa fa-clipboard fa-3"></i></a></li>
                 <li><a id="collaborations" href="#" data-container="body" data-placement="bottom" data-content="Collaborate" data-trigger="hover" data-toggle="modal" data-target="#collaborate"><i class="fa fa-users fa-3"></i></a></li>
 			</ul>
-			
+
 			<ul class="nav navbar-nav projectnav">
 			<li><a id="playPause" href="#"><i class="fa fa-play fa-3"></i></a></li>
 			<li class="endofcontrols"><a id="stop" href="#"><i class="fa fa-stop fa-3"></i></a></li>
 			<li><a id="undo-recent" href="#"><i class="fa fa-undo fa-3"></i></a></li>
 			<li><a id="redo-recent" href="#"><i class="fa fa-repeat fa-3"></i></a></li>
 			</ul>
-			
-			<!-- Only BPM & Cog/Expand after this 
+
+			<!-- Only BPM & Cog/Expand after this
 			<div class="col-xs-1">
 				<form class="navbar-form" role="search">
 				<div class="input-group">
@@ -77,7 +77,7 @@
 			</ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav> <!-- End Navigation -->
-		
+
 		<div class="container-fluid new-content" id="newpage">
             <ul class="landingpage-content">
                 <li class="landingpage-content"><a id="newproject" href="#"><i class="fa fa-file fa-5x"></i> <h1 class="landingpage-content">New Project</h1></a></li>
@@ -85,7 +85,7 @@
                 <li class="landingpage-content"><a id="collaborations" href="#"><i class="fa fa-users fa-5x"></i> <h1 class="landingpage-content">Collaborate</h1></a></li>
             </ul>
 		</div>
-		
+
         <div class="container-fluid" id="project">
 		  <div class="row menubar" id="menubar">
 			<div class="col-lg-12">
@@ -98,16 +98,15 @@
                     <li data-role="collapsible" data-shadow="false" data-corners="false">
                         <p class="sidebar-option">Instruments <i class=""></i></p>
                         <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
-                            <li>Sparrow VSTi broo</li>
+                            <li>Instrument 1</li>
                         </ul>
                     </li>
-                    <li><a href="#">Humans</a></li>
                     <li data-role="collapsible" data-iconpos="right" data-shadow="false" data-corners="false">
-                        <h2>Fish</h2>
+                        <h2>Effects</h2>
                         <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
-                            <li><a href="#">Salmon</a></li>
-                            <li>Pollock</li>
-                            <li>Trout</li>
+                            <li><a href="#">Phaser</a></li>
+                            <li>Delay</li>
+                            <li>Flanger</li>
                         </ul>
                     </li>
                 </ul>
@@ -116,7 +115,7 @@
 			<div class="col-md-1 rightsidebar">right side</div>
 		  </div>
         </div> <!-- End Content -->
-		
+
 		<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
@@ -134,7 +133,7 @@
 			</div>
 		  </div>
 		</div> <!-- End About Modal -->
-        
+
         <div class="modal fade" id="collaborate" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
             <div class="modal-dialog collaboration">
                 <div class="modal-content collaboration">
@@ -162,7 +161,7 @@
                 </div>
             </div>
         </div> <!-- End Collaboration (Landing Page) Modal -->
-		
+
 		<div class="modal fade" id="exit" tabindex="-1" role="dialog" aria-labelledby="exitLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
@@ -180,7 +179,7 @@
 			</div>
 		  </div>
 		</div> <!-- End Exit Modal -->
-		
+
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -230,10 +229,10 @@
 				else if (docElm.msRequestFullscreen) {
 					docElm.msRequestFullscreen();
 				}
-				
+
 			}
 		});
-		
+
 		$( window ).load(function() {
           $("#newpage").show();
 		  $("#landingpage").show();
@@ -241,20 +240,20 @@
 		  $( "#bpm" ).hide();
 		  $(".projectnav").hide();
 		});
-		
-		function closeCurrent(){ 
+
+		function closeCurrent(){
           $("#newpage").show();
 		  $("#landingpage").show();
 		  $("#project").hide();
 		  $( "#bpm" ).hide();
 		  $(".projectnav").hide();
-		} 
-		
+		}
+
 		/* $( "#menutoggle" ).click(function() {
 			$( "#menubar" ).toggle();
 			console.log("menu bar toggled");
 		}); */
-		
+
 		$( "#newproject" ).click(function()  // New Project
 		{
 			$( "#bpm" ).show();
@@ -264,12 +263,12 @@
 			$("#landingpage").hide();
             $( "#menubar" ).hide();
 		});
-		
+
         /*                           |
         |                            |
         |   Keyboard Shortcuts       |
         |                           */
-            
+
 		$('body').keyup(function (e) {
 		console.log(e.keyCode);
 		var key = e.keyCode;
@@ -287,12 +286,12 @@
               $("#landingpage").hide();
               $( "#menubar" ).hide();
           }
-		  
+
 		  if(key == 79)  // Open Project
 		  {
-			
+
 		  }
-            
+
           if(key == 67)
           {
               $("#newpage").show();
