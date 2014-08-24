@@ -2,7 +2,7 @@ WebDAW
 =======
 
 <p>
-WebDAW is an open source online digital audio workstation (DAW) based on the 
+WebDAW is an open source online digital audio workstation (DAW) based on the
 <a href = https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html target = "blank">Web Audio API </a>.
 </p>
 
