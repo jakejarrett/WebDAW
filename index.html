@@ -129,11 +129,6 @@
 		</div>
 
         <div class="container-fluid" id="project">
-		  <div class="row menubar" id="menubar">
-			<div class="col-lg-12">
-			  Menu Bar example
-			</div>
-		  </div>
 		  <div class="row dawinner">
 			<div class="col-md-2 sidebar">
                 <ul class="sidebar-list" data-role="listview" class="ui-listview-outer" data-inset="true">
@@ -277,7 +272,7 @@
 		});
 
 		$( window ).load(function() {
-          $("#newpage").show();
+      $("#newpage").show();
 		  $("#landingpage").show();
 		  $("#project").hide();
 		  $( "#bpm" ).hide();
@@ -285,17 +280,12 @@
 		});
 
 		function closeCurrent(){
-          $("#newpage").show();
+      $("#newpage").show();
 		  $("#landingpage").show();
 		  $("#project").hide();
 		  $( "#bpm" ).hide();
 		  $(".projectnav").hide();
 		}
-
-		/* $( "#menutoggle" ).click(function() {
-			$( "#menubar" ).toggle();
-			console.log("menu bar toggled");
-		}); */
 
 		$( "#newproject" ).click(function()  // New Project
 		{
@@ -304,7 +294,6 @@
 			$(".projectnav").show();
 			$("#newpage").hide();
 			$("#landingpage").hide();
-            $( "#menubar" ).hide();
 		});
 
         /*                           |
@@ -315,35 +304,32 @@
 		$('body').keyup(function (e) {
 		console.log(e.keyCode);
 		var key = e.keyCode;
-		/* if(key == 77)  // Toggle Menu Bar
-		  {
-			$( "#menubar" ).toggle();
-		  }
-		  */
+
 		  if(key == 78)  // New Project
-          {
-              $( "#bpm" ).show();
-              $( "#project" ).show();
-              $(".projectnav").show();
-              $("#newpage").hide();
-              $("#landingpage").hide();
-              $( "#menubar" ).hide();
-          }
+        {
+          $( "#bpm" ).show();
+          $( "#project" ).show();
+          $(".projectnav").show();
+          $("#newpage").hide();
+          $("#landingpage").hide();
+        }
 
 		  if(key == 79)  // Open Project
 		  {
 
 		  }
 
-          if(key == 67)
-          {
-              $("#newpage").show();
-              $("#landingpage").show();
-              $("#project").hide();
-              $( "#bpm" ).hide();
-              $(".projectnav").hide();
-          }
-		});
+      if(key == 67)
+        {
+          $("#newpage").show();
+          $("#landingpage").show();
+          $("#project").hide();
+          $( "#bpm" ).hide();
+          $(".projectnav").hide();
+        }
+
+		  });
+
         $("#newproject").popover({ trigger: "hover" });
         $("#openproject").popover({ trigger: "hover" });
         $("#collaborations").popover({ trigger: "hover" });
