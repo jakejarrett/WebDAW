@@ -1,22 +1,22 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>WebDAW</title>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <!-- <link href="resources/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>WebDAW</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="resources/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="resources/css/site.css" rel="stylesheet" media="screen">
-        <!--<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">-->
+    <!--<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">-->
 
-    </head>
-    <body>
+  </head>
+  <body>
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		  <!-- Brand and toggle get grouped for better mobile display -->
+      <!-- Brand and toggle get grouped for better mobile display -->
 		  <div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 			  <span class="sr-only">Toggle navigation</span>
@@ -32,10 +32,22 @@
 			  <li class="pull-left closebutton" data-toggle="modal" data-target="#exit"><a href="#exit"><i class="fa fa-times fa-3"></i></a></li>
 			</ul>
 			<ul class="nav navbar-nav landingnav" id="landingpage">
-                <li><a id="newproject" href="#" data-container="body" data-placement="bottom" data-content="New Project" data-trigger="hover"><i class="fa fa-file fa-3"></i></a></li>
-			<li><a id="openproject" href="#" data-container="body" data-placement="bottom" data-content="Open Project" data-trigger="hover"><i class="fa fa-clipboard fa-3"></i></a></li>
-                <li><a id="collaborations" href="#" data-container="body" data-placement="bottom" data-content="Collaborate" data-trigger="hover" data-toggle="modal" data-target="#collaborate"><i class="fa fa-users fa-3"></i></a></li>
-			</ul>
+        <li>
+          <a class="newproject" href="#" data-container="body" data-placement="bottom" data-content="New Project" data-trigger="hover">
+            <i class="fa fa-file fa-3"></i>
+          </a>
+        </li>
+			<li>
+        <a class="openproject" href="#" data-container="body" data-placement="bottom" data-content="Open Project" data-trigger="hover">
+          <i class="fa fa-clipboard fa-3"></i>
+        </a>
+      </li>
+      <li>
+        <a class="collaborations" href="#" data-container="body" data-placement="bottom" data-content="Collaborate" data-trigger="hover" data-toggle="modal" data-target="#collaborate">
+          <i class="fa fa-users fa-3"></i>
+        </a>
+      </li>
+		</ul>
 
 			<ul class="nav navbar-nav projectnav">
 			<li><a id="playPause" href="#"><i class="fa fa-play fa-3"></i></a></li>
@@ -54,7 +66,7 @@
 			</div> -->
       <div class="nav navbar-nav projectnav text-center ">
         <div class="titlebar">
-            <p class="title">Song Title</p>
+            <p class="title">Project Name</p>
             <p class="project">~/Projects/Project Name</p>
         </div>
       </div>
@@ -91,7 +103,7 @@
       <h4 class="landing-text push-content">Open/Create a project to begin</h4>
             <div class="landingpage-content">
                 <div class="row">
-                  <a id="newproject" href="#" >
+                  <a id="newproject" class="newproject" href="#" >
                     <div class="col-md-2">
                       <i class="fa fa-file fa-5x"></i>
                     </div>
@@ -103,7 +115,7 @@
                 </div>
 
                 <div class="row">
-                  <a id="openproject" href="#">
+                  <a class="openproject" href="#">
                     <div class="col-md-2">
                       <i class="fa fa-clipboard fa-5x"></i>
                     </div>
@@ -115,7 +127,7 @@
                 </div>
 
                 <div class="row">
-                  <a id="collaborations" href="#">
+                  <a class="collaborations" href="#" data-toggle="modal" data-target="#collaborate">
                     <div class="col-md-2">
                       <i class="fa fa-users fa-5x"></i>
                     </div>
@@ -287,7 +299,7 @@
 		  $( ".projectnav" ).hide();
 		}
 
-		$( "#newproject" ).click(function()  // New Project
+		$( ".newproject" ).click(function()  // New Project
 		{
 			$( "#bpm" ).show();
 			$( "#project" ).show();
