@@ -11,15 +11,15 @@ WebDAW is an open source online digital audio workstation (DAW) based on the
 
 <h3>WebDAW (OpenDAW Fork)</h3>
 
-<h6>WebDAW is based off the work of 2 Individuals, Adam Levine & Pietro Verrecchia.
-<br />
-This project could not have happened without their brilliant work on their Project.
-<br />
-
-NOTICE: This project currently has <u>NO</u> functionality as of June 14, 2014. There will be Functionality added in a future update, But the main focus at the moment is UI.
+<h6>
+  WebDAW is a fork of OpenDAW, with a primary focus of Design & User Experience.
+  <br />
+  Future updates will include the return of functionality & added functionality (Themes, New Instruments & effects)
 </h6>
 
-<p>WARNING. This project is highly unstable & currently doesn't work beyond the landing page. Do not expect a working product on this fork<br>
+<p>
+  Note: This project is considered unstable, and should be treated as such. Do not consider this a finished product.
+</p><br>
 <br />
 <a href="http://webdaw.jrjmedia.net" target="blank">Preview</a></p>
 <br />
