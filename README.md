@@ -11,16 +11,20 @@ WebDAW is an open source online digital audio workstation (DAW) based on the
 
 <h3>WebDAW (OpenDAW Fork)</h3>
 
-<h6>
+<p>
   WebDAW is a fork of OpenDAW, with a primary focus of Design & User Experience.
   <br />
   Future updates will include the return of functionality & added functionality (Themes, New Instruments & effects)
-</h6>
+</p>
+
+<br />
 
 <p>
-  Note: This project is considered unstable, and should be treated as such. Do not consider this a finished product.
-</p><br>
-<br />
-<a href="http://webdaw.jrjmedia.net" target="blank">Preview</a></p>
-<br />
-<p><a href="https://github.com/pvererecchia/OpenDAW/">For OpenDAW, Click here</a></p>
+  Note: This project is considered unstable, and should be treated as such.
+  <br />
+  Do not consider this a finished product.
+  <br />
+  <a href="http://webdaw.jrjmedia.net" target="blank">Preview</a>
+  <br />
+  <a href="https://github.com/pvererecchia/OpenDAW/">For OpenDAW, Click here</a>
+</p>
