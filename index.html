@@ -91,7 +91,7 @@
       <h4 class="landing-text push-content">Open/Create a project to begin</h4>
             <div class="landingpage-content">
                 <div class="row">
-                  <a id="newproject" href="#">
+                  <a id="newproject" href="#" >
                     <div class="col-md-2">
                       <i class="fa fa-file fa-5x"></i>
                     </div>
@@ -158,14 +158,14 @@
 			<div class="modal-content">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="aboutLabel">About WebDAW</h4>
+				<h4 class="modal-title" id="aboutLabel">WebDAW 0.0.1 (Pre-alpha)</h4>
 			  </div>
 			  <div class="modal-body">
 				WebDAW is a fork of OpenDAW, to create a more modern UI for a web based DAW (Digital Audio Workstation)
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-default">Licenses</button>
-				<button type="button" class="btn btn-primary">Website</button>
+				<a type="button" class="btn btn-default">Licenses</a>
+				<a type="button" class="btn btn-primary" href="https://github.com/jakehh/WebDAW">Website</a>
 			  </div>
 			</div>
 		  </div>
@@ -272,28 +272,28 @@
 		});
 
 		$( window ).load(function() {
-      $("#newpage").show();
-		  $("#landingpage").show();
-		  $("#project").hide();
+      $( "#newpage" ).show();
+		  $( "#landingpage" ).show();
+		  $( "#project" ).hide();
 		  $( "#bpm" ).hide();
-		  $(".projectnav").hide();
+		  $( ".projectnav" ).hide();
 		});
 
 		function closeCurrent(){
-      $("#newpage").show();
-		  $("#landingpage").show();
-		  $("#project").hide();
+      $( "#newpage" ).show();
+		  $( "#landingpage" ).show();
+		  $( "#project" ).hide();
 		  $( "#bpm" ).hide();
-		  $(".projectnav").hide();
+		  $( ".projectnav" ).hide();
 		}
 
 		$( "#newproject" ).click(function()  // New Project
 		{
 			$( "#bpm" ).show();
 			$( "#project" ).show();
-			$(".projectnav").show();
-			$("#newpage").hide();
-			$("#landingpage").hide();
+			$( ".projectnav" ).show();
+			$( "#newpage" ).hide();
+			$( "#landingpage" ).hide();
 		});
 
         /*                           |
@@ -301,7 +301,7 @@
         |   Keyboard Shortcuts       |
         |                           */
 
-		$('body').keyup(function (e) {
+		$( 'body' ).keyup(function (e) {
 		console.log(e.keyCode);
 		var key = e.keyCode;
 
@@ -309,9 +309,9 @@
         {
           $( "#bpm" ).show();
           $( "#project" ).show();
-          $(".projectnav").show();
-          $("#newpage").hide();
-          $("#landingpage").hide();
+          $( ".projectnav" ).show();
+          $( "#newpage" ).hide();
+          $( "#landingpage" ).hide();
         }
 
 		  if(key == 79)  // Open Project
@@ -321,18 +321,18 @@
 
       if(key == 67)
         {
-          $("#newpage").show();
-          $("#landingpage").show();
-          $("#project").hide();
+          $( "#newpage" ).show();
+          $( "#landingpage" ).show();
+          $( "#project" ).hide();
           $( "#bpm" ).hide();
-          $(".projectnav").hide();
+          $( ".projectnav" ).hide();
         }
 
 		  });
 
-        $("#newproject").popover({ trigger: "hover" });
-        $("#openproject").popover({ trigger: "hover" });
-        $("#collaborations").popover({ trigger: "hover" });
+        $( "#newproject" ).popover({ trigger: "hover" });
+        $( "#openproject" ).popover({ trigger: "hover" });
+        $( "#collaborations" ).popover({ trigger: "hover" });
     </script>
   </body>
 </html>

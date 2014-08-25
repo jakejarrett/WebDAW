@@ -128,13 +128,6 @@ body, html {
 }
 /* Menu Styling */
 
-.menubar {
-    min-height:22px;
-    border-radius:0;
-    background-color: #dedede;
-    border-bottom: 1px solid #a8a8a8;
-}
-
 .landingnav {
     margin: 0 auto;
     padding-right: 0;
@@ -173,6 +166,7 @@ body, html {
 }
 
 /* OpenDAW Styling */
+
 body {
     padding-top: 60px;
 }
@@ -421,7 +415,7 @@ body .collaboration {
 
 div.new-content {
     text-align: center;
-    padding-top: 5%;
+    padding-top: 7%;
 }
 
 .push-content {
@@ -434,9 +428,10 @@ div.landingpage-content {
     padding-left: 40%;
 }
 
-href.landingpage-content {
+a.landingpage-content {
     text-decoration:none;
 }
+
 .collab-title {
     text-align: center;
     padding: 0;
