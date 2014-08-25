@@ -17,8 +17,6 @@ WebDAW is an open source online digital audio workstation (DAW) based on the
   Future updates will include the return of functionality & added functionality (Themes, New Instruments & effects)
 </p>
 
-<br />
-
 <p>
   Note: This project is considered unstable, and should be treated as such.
   <br />
