@@ -152,6 +152,10 @@ body, html {
     text-align: center;
 }
 
+.landing-text h4 {
+    margin-bottom: 25px;
+}
+
 .titlebar {
     line-height:15px !important;
     padding-top: 14px;
@@ -415,11 +419,11 @@ body .collaboration {
 
 div.new-content {
     text-align: center;
-    padding-top: 7%;
+    padding-top: 6%;
 }
 
 .push-content {
-    margin-bottom: 20px !important;
+    margin-bottom: 50px !important;
 }
 
 div.landingpage-content {
@@ -495,8 +499,4 @@ a.landingpage-content {
 
 .new-project {
     line-height: 20px;
-}
-
-a #newproject {
-    color: #333333;
 }
