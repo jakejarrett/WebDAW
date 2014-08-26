@@ -16,3 +16,10 @@ What to finish off before starting work on implementing instruments & functional
 
 * Need to improve performance (Slow even when initializing)
 * Only load things when called? (EG/ don't need all the instruments loaded if you're not using any yet)
+
+#### Themes
+
+* Restructure CSS
+* Plan to support Instrument Theming too
+* Create Flat Theme, Light & Dark Themes.
+* Re-write SCSS for code to allow users to make their own style in SCSS or CSS (Maybe add LESS later)
