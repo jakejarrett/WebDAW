@@ -1,0 +1,9 @@
+{
+    "theme":
+    {
+        "title"  : "Flat Theme",
+        "version": "0.1",
+        "author" : "Jake Jarrett",
+        "url"    : "https://github.com/jakehh/WebDAW"
+    }
+}
