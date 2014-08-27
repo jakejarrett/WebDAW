@@ -1,5 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
-
 /*
 // Theme: default
 // Author: Jake Jarrett
@@ -7,13 +5,46 @@
 //
 //                */
 
+
+/*
+  Base theme (No Styling, Keep in all themes)
+*/
 body, html {
-  font-family: 'Open Sans', 'sans-serif';
   height: 100%;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 
+// Close Button
+
+.closebutton {
+  margin-right: 0;
+}
+
+// Controls
+.endofcontrols {
+  margin-right: 10px;
+}
+
+
+/*
+  Default Styling, Can be replaced for Custom Themes.
+*/
+
+// Font
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+// Body
+
+body, html {
+  font-family: 'Open Sans', 'sans-serif';
+}
+
+
+/*
+  Bootstrap Navigation
+*/
 .navbar-form {
   padding: 10px 15px;
   height: 30px;
@@ -25,13 +56,6 @@ body, html {
     border-radius: 3px;
     height: 30px;
   }
-}
-
-.col-xs-1 {
-  width: 70px;
-  padding-left: 0;
-  padding-right: 0;
-  margin-right: 20px;
 }
 
 .navbar-inverse .navbar-nav > {
@@ -120,13 +144,14 @@ body, html {
   line-height: 60px;
 }
 
-.closebutton {
-  margin-right: 0;
+// Small Column (Bootstrap)
+.col-xs-1 {
+  width: 70px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 20px;
 }
 
-.endofcontrols {
-  margin-right: 10px;
-}
 
 .container-fluid {
   margin: 0;
