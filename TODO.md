@@ -19,7 +19,7 @@ What to finish off before starting work on implementing instruments & functional
 
 #### Themes
 
-* Restructure CSS
+* ~~Restructure CSS~~
 * Plan to support Instrument Theming too
 * Create Flat Theme, Light & Dark Themes.
 * Re-write SCSS for code to allow users to make their own style in SCSS or CSS (Maybe add LESS later)
