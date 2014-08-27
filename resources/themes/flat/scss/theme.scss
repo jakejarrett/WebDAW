@@ -2,8 +2,15 @@
 // Theme: Flat Theme
 // Author: Jake Jarrett
 // Website: https://github.com/jakehh/WebDAW
-//
 */
+
+$navbarColor: #FFFFFF;
+$navbarHColr: #FFFFFF;
+$navbarHBGColr: #0095bf;
+$navbarBG: #00acdd;
+$navbarBorder: #009bc7;
+$sidebarBG: #FFFFFF;
+$sidebarBorder: #e6f0f5;
 
 // Font
 
@@ -20,91 +27,49 @@ body, html {
 
 .navbar-inverse .navbar-nav > {
   li > a {
-    color: #6f6f6f;
+    color: $navbarColor;
     display: inline-block;
     vertical-align: middle;
     &:hover, &:focus {
-      color: #424242;
+      color: $navbarHColr;
     }
   }
   .open > a {
-    color: #6f6f6f;
-    background: #e5e5e5;
-    // Old browsers
-    background: -moz-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-    // FF3.6+
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #bdbdbd));
-    // Chrome,Safari4+
-    background: -webkit-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-    // Chrome10+,Safari5.1+
-    background: -o-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-    // Opera 11.10+
-    background: -ms-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-    // IE10+
-    background: linear-gradient(to bottom, #e5e5e5 0%, #bdbdbd 100%);
-    // W3C
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#bdbdbd',GradientType=0 );
-    // IE6-9
+    color: $navbarHColr;
+    background: $navbarBG;
     &:hover, &:focus {
-      color: #6f6f6f;
-      background: #e5e5e5;
-      // Old browsers
-      background: -moz-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-      // FF3.6+
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #bdbdbd));
-      // Chrome,Safari4+
-      background: -webkit-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-      // Chrome10+,Safari5.1+
-      background: -o-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-      // Opera 11.10+
-      background: -ms-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-      // IE10+
-      background: linear-gradient(to bottom, #e5e5e5 0%, #bdbdbd 100%);
-      // W3C
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#bdbdbd',GradientType=0 );
-      // IE6-9
+      color: $navbarHColr;
+      background: $navbarBG;
     }
   }
 }
 
 .dropdown-menu li > a {
   &:hover, &:focus {
-    color: #6f6f6f;
-    background-color: #e5e5e5;
+    color: $navbarHColr;
+    background-color: $navbarBG;
   }
 }
 
 .dropdown-submenu:hover > a {
-  color: #6f6f6f;
-  background-color: #e5e5e5;
+  color: $navbarHColr;
+  background-color: $navbarBG;
 }
 
 .navbar-inverse {
-  background: #e5e5e5;
-  // Old browsers
-  background: -moz-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-  // FF3.6+
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, #bdbdbd));
-  // Chrome,Safari4+
-  background: -webkit-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-  // Chrome10+,Safari5.1+
-  background: -o-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-  // Opera 11.10+
-  background: -ms-linear-gradient(top, #e5e5e5 0%, #bdbdbd 100%);
-  // IE10+
-  background: linear-gradient(to bottom, #e5e5e5 0%, #bdbdbd 100%);
-  // W3C
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#bdbdbd',GradientType=0 );
-  // IE6-9
+  background: $navbarBG;
   border-bottom: 1px solid;
-  border-color: #a8a8a8;
+  border-color: $navbarBorder;
+    .fa {
+        color: $navbarColor;
+    }
 }
 
 // Left Sidebar
 
 .sidebar {
-  background-color: #dedede;
-  border-right: 1px solid #a8a8a8;
+  background-color: $sidebarBG;
+  border-right: 1px solid $sidebarBorder;
 }
 
 // Right Sidebar (Channels etc)
@@ -169,4 +134,23 @@ body, html {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 10px;
+}
+
+// Titlebar
+
+.titlebar {
+  color: $navbarColor;
+}
+
+// Right Sidebar
+
+.rightsidebar {
+  background-color: $sidebarBG;
+  border-left: 1px solid $sidebarBorder;
+}
+
+// Make modals Square
+
+.modal-content {
+  border-radius: 0px;
 }

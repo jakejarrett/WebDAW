@@ -1,0 +1,109 @@
+/*
+// Theme: Flat Theme
+// Author: Jake Jarrett
+// Website: https://github.com/jakehh/WebDAW
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+body, html {
+  font-family: 'Open Sans', 'sans-serif';
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFFFFF;
+  display: inline-block;
+  vertical-align: middle;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: #FFFFFF;
+}
+.navbar-inverse .navbar-nav > .open > a {
+  color: #FFFFFF;
+  background: #00acdd;
+}
+.navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #FFFFFF;
+  background: #00acdd;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus {
+  color: #FFFFFF;
+  background-color: #00acdd;
+}
+
+.dropdown-submenu:hover > a {
+  color: #FFFFFF;
+  background-color: #00acdd;
+}
+
+.navbar-inverse {
+  background: #00acdd;
+  border-bottom: 1px solid;
+  border-color: #009bc7;
+}
+.navbar-inverse .fa {
+  color: #FFFFFF;
+}
+
+.sidebar {
+  background-color: #FFFFFF;
+  border-right: 1px solid #e6f0f5;
+}
+
+.rightsidebar {
+  background-color: #dedede;
+  border-left: 1px solid #a8a8a8;
+}
+
+.instrumentsbutton {
+  border-bottom: 1px solid #a8a8a8;
+}
+
+.new-content {
+  background-color: #ffffff;
+}
+
+#effectSortable li {
+  background-color: #E0E0E0;
+  border: 1px solid #000000;
+}
+
+.track {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+}
+
+.addTrack {
+  border: 1px solid #e3e3e3;
+  background-color: #f5f5f5;
+}
+
+.trackBox {
+  height: 82px;
+  position: relative;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.timeline {
+  height: 40px;
+  margin-bottom: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+}
+
+.titlebar {
+  color: #FFFFFF;
+}
+
+.rightsidebar {
+  background-color: #FFFFFF;
+  border-left: 1px solid #e6f0f5;
+}
+
+.modal-content {
+  border-radius: 0px;
+}
