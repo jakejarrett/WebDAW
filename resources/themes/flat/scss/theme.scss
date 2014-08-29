@@ -15,11 +15,13 @@ $sidebarBorder: #e6f0f5;
 // Font
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400,300,700);
 
 // Body, Load font
 
 body, html {
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: 'Raleway', 'sans-serif';
 }
 
 
@@ -140,6 +142,7 @@ body, html {
 
 .titlebar {
   color: $navbarColor;
+  font-family: 'Open Sans', 'sans-serif';
 }
 
 // Right Sidebar
