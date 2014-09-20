@@ -423,16 +423,16 @@
             $( "#bpm" ).hide();
             $( ".projectnav" ).hide();
           }
+            
+          if(key == 222) {
+            $('link[href="resources/themes/default/css/theme.css"]').attr('href','resources/themes/flat/css/theme.css');
+          }
 
   		  });
 
           $( "#newproject" ).popover({ trigger: "hover" });
           $( "#openproject" ).popover({ trigger: "hover" });
           $( "#collaborations" ).popover({ trigger: "hover" });
-            
-          if (key == 222) {
-            $('link[href="resources/themes/default/css/theme.css"]').attr('href','resources/themes/flat/css/theme.css');
-          }
       </script>
     </body>
 </html>
