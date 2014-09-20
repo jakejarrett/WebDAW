@@ -144,22 +144,105 @@
       <div class="container-fluid" id="project">
         <div class="row dawinner">
           <div class="col-md-2 sidebar">
-            <ul class="sidebar-list" data-role="listview" class="ui-listview-outer" data-inset="true">
-              <li data-role="collapsible" data-shadow="false" data-corners="false">
-                <p class="sidebar-option">Instruments <i class=""></i></p>
-                <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
-                  <li>Instrument 1</li>
-                </ul>
-              </li>
-              <li data-role="collapsible" data-iconpos="right" data-shadow="false" data-corners="false">
-                <h2>Effects</h2>
-                <ul data-role="listview" data-shadow="false" data-inset="true" data-corners="false">
-                  <li><a href="#">Phaser</a></li>
-                  <li>Delay</li>
-                  <li>Flanger</li>
-                </ul>
-              </li>
-            </ul>
+            <div id="left" class="span3">
+            <ul id="menu-group-1" class="nav menu">  
+                <li class="instruments deeper parent">
+                    <a class="" href="#">
+                        <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-8" class="sign">Effects</span>
+                    </a>
+                    <ul class="children nav-child unstyled small collapse" id="sub-item-8">
+                        <li class="item-9 deeper parent">
+                            <a class="" href="#">
+                                <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-9" class="sign"></span>
+                                <span class="lbl">Menu 1</span> 
+                            </a>
+                            <ul class="children nav-child unstyled small collapse" id="sub-item-9">
+                                <li class="item-10">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 1.1</span>
+                                    </a>
+                                </li>
+                                <li class="item-11">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 1.2</span> 
+                                    </a>
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li class="item-12 deeper parent">
+                            <a class="" href="#">
+                                <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-12" class="sign"><i class="icon-plus icon-white"></i></span>
+                                <span class="lbl">Menu 2</span> 
+                            </a>
+                            <ul class="children nav-child unstyled small collapse" id="sub-item-12">
+                                <li class="item-13">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 2.1</span>                                    
+                                    </a>
+                                </li>
+                                <li class="item-14">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 2.2</span>                                    
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li> 
+
+                <li class="effects deeper parent">
+                    <a class="" href="#">
+                        <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-8" class="sign">Effects</span>
+                    </a>
+                    <ul class="children nav-child unstyled small collapse" id="sub-item-8">
+                        <li class="item-9 deeper parent">
+                            <a class="" href="#">
+                                <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-9" class="sign"></span>
+                                <span class="lbl">Menu 1</span> 
+                            </a>
+                            <ul class="children nav-child unstyled small collapse" id="sub-item-9">
+                                <li class="item-10">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 1.1</span>
+                                    </a>
+                                </li>
+                                <li class="item-11">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 1.2</span> 
+                                    </a>
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li class="item-12 deeper parent">
+                            <a class="" href="#">
+                                <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-12" class="sign"><i class="icon-plus icon-white"></i></span>
+                                <span class="lbl">Menu 2</span> 
+                            </a>
+                            <ul class="children nav-child unstyled small collapse" id="sub-item-12">
+                                <li class="item-13">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 2.1</span>                                    
+                                    </a>
+                                </li>
+                                <li class="item-14">
+                                    <a class="" href="#">
+                                        <span class="sign"><i class="icon-play"></i></span>
+                                        <span class="lbl">Menu 2.2</span>                                    
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>    			
+            </ul>          
+		</div>
           </div>
           <div class="col-md-9 scrollable dawcontent">10</div>
           <div class="col-md-1 rightsidebar">right side</div>
@@ -346,6 +429,10 @@
           $( "#newproject" ).popover({ trigger: "hover" });
           $( "#openproject" ).popover({ trigger: "hover" });
           $( "#collaborations" ).popover({ trigger: "hover" });
+            
+          if (key == 222) {
+            $('link[href="resources/themes/default/css/theme.css"]').attr('href','resources/themes/flat/css/theme.css');
+          }
       </script>
     </body>
 </html>

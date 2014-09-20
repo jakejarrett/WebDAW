@@ -5,7 +5,7 @@ body, html {
   height: 100%;
   overflow-y: hidden;
   overflow-x: hidden;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 // Close Button
@@ -69,7 +69,7 @@ body, html {
   -moz-border-radius: 0;
   border-radius: 0;
   position: absolute;
-  padding-left: 50px;
+  padding-left: 15px;
   height: 100%;
   width: 150px;
   maximum-width: 150px;
@@ -411,6 +411,125 @@ a.landingpage-content {
 
 .new-project {
   line-height: 20px;
+}
+
+//
+// MENU-LEFT
+// Layout
+//
+
+#left ul.nav {
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+#left ul.nav ul,
+#left ul.nav ul li {
+    list-style: none!important;
+    list-style-type: none!important;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+#left ul.nav ul {
+    padding-left: 0;
+    width: auto;
+}
+#left ul.nav ul.children {
+    padding-left: 12px;
+    width: auto;
+}
+#left ul.nav ul.children li{
+    margin-left: 0px;
+}
+#left ul.nav li a:hover {
+    text-decoration: none;
+}
+
+#left ul.nav li a:hover .lbl {
+    color: #999!important;
+}
+
+#left ul.nav li.current>a .lbl {
+    background-color: #999;
+    color: #fff!important;
+}
+
+// parent item
+#left ul.nav li.parent a {
+    padding: 0px;
+    color: #ccc;
+}
+
+#left ul.nav>li.parent>a {
+    border: solid 1px #999;
+    text-transform: uppercase;
+}
+
+#left ul.nav li.parent a:hover {
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+}
+
+// link tag (a)
+#left ul.nav li.parent ul li a {
+    color: #222;
+    border: none;
+    display:block;
+    padding-left: 5px;    
+}
+
+#left ul.nav li.parent ul li a:hover {
+    background-color: #fff;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;  
+}
+
+// sign for parent item
+#left ul.nav li .sign {
+    display: inline-block;
+    width: 14px;
+    padding: 5px 8px;
+    background-color: transparent;
+    color: #fff;
+}
+#left ul.nav li.parent>a>.sign{
+    margin-left: 0px;
+    background-color: #999;
+}
+
+// label
+#left ul.nav li .lbl {
+    padding: 5px 12px;
+    display: inline-block;
+}
+#left ul.nav li.current>a>.lbl {
+    color: #fff;
+}
+#left ul.nav  li a .lbl{
+    font-size: 12px;
+}
+
+//
+// THEMATIQUE
+//
+// theme 1
+//
+#left ul.nav>li.item-1.parent>a {
+    border: solid 1px #ff6307;
+}
+#left ul.nav>li.item-1.parent>a>.sign,
+#left ul.nav>li.item-1 li.parent>a>.sign{
+    margin-left: 0px;
+    background-color: #ff6307;
+}
+#left ul.nav>li.item-1 .lbl {
+    color: #ff6307;
+}
+#left ul.nav>li.item-1 li.current>a .lbl {
+    background-color: #ff6307;
+    color: #fff!important;
 }
 
 // End of Required Styles
