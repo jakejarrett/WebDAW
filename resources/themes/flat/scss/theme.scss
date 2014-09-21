@@ -53,6 +53,10 @@ body, html {
   }
 }
 
+.dropdown-menu {
+    border-radius: 0;
+}
+
 .dropdown-submenu:hover > a {
   color: $navbarHColr;
   background-color: $navbarBG;

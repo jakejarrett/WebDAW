@@ -30,6 +30,10 @@ body, html {
   background-color: #00acdd;
 }
 
+.dropdown-menu {
+    border-radius: 0;
+}
+
 .dropdown-submenu:hover > a {
   color: #FFFFFF;
   background-color: #00acdd;
