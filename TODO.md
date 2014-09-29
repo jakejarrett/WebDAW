@@ -26,3 +26,21 @@ What to finish off before starting work on implementing instruments & functional
 * Plan to support Instrument Theming too
 * Create Flat Theme, Light & Dark Themes.
 * Re-write SCSS for code to allow users to make their own style in SCSS or CSS (Maybe add LESS later)
+
+What to do before a BETA is released?
+===
+
+#### Code
+
+* Prepare code for packaging in CEF to test as a Desktop Application
+* Minimize outside frameworks (jQuery, Modernizr etc) to lower Resource
+* Have stable & Modular code.
+
+#### UI
+
+* Allow native windows for things that are handled via Modals in Bootstrap for Desktop Application (EG/ Closing could be an actual SAVE/CANCEL/DONT SAVE dialog)
+* The Theme engine should choose what theme defaults on first run for what OS (EG/ OS X could have default, Windows has Modern/Flat and Linux has GTK style theme)
+
+#### Projects
+* Enable external saving & instruments (Could potentially bring this to the web version too, depending on how it is implemented)
+* Research other project types & try to convert things like Ardour, Non-Timeline, FLP etc
