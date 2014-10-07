@@ -20,6 +20,11 @@ What to finish off before starting work on implementing instruments & functional
 * Only load things when called? (EG/ don't need all the instruments loaded if you're not using any yet)
 * Improve how themes change (If local, doesn't matter as much, but can be demanding on resources if changing constantly for multiple users)
 
+#### Backend
+
+* Begin implementing Full Backend (Most likely use PHP & MySQL to start with)
+* Begin Planning how a user system could integrate with WebDAW (Cloud Support?)
+
 #### Themes
 
 * ~~Restructure CSS~~
