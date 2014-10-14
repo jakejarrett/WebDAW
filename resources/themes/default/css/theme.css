@@ -11,9 +11,6 @@ body, html {
   font-family: 'Open Sans', 'sans-serif';
 }
 
-p {
-    margin: 0;
-}
 .navbar-inverse .navbar-nav > li > a {
   color: #6f6f6f;
   display: inline-block;
@@ -108,18 +105,21 @@ p {
     color: #cccccc;
 }
 
+.addTrack:hover {
+    transition: background .5s;
+    background-color: #cccccc;
+}
+
 .plusButton:hover {
-    color: #000000;
+    transition: color .5s;
+    color: #ffffff;
 }
 
 .trackBox {
-  height: 82px;
+  height: 90px;
   position: relative;
   background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
+  border-top: 1px solid #a8a8a8;
 }
 
 .timeline {

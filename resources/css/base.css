@@ -8,6 +8,10 @@ body, html {
   padding-top: 30px;
 }
 
+p {
+    margin: 0;
+}
+
 .closebutton {
   margin-right: 0;
 }
@@ -68,6 +72,7 @@ body, html {
 }
 
 .dawcontent {
+  padding-top: 15px;
   margin-left: 150px !important;
   position: absolute;
   height: 100% !important;
@@ -107,6 +112,10 @@ body, html {
   text-align: center;
 }
 
+.btn, .btn-mini {
+    pdding-left: 15px;
+}
+
 .titlebar {
   line-height: 18px !important;
   padding-top: 14px;
@@ -119,6 +128,11 @@ body, html {
   margin-top: -5px;
   font-size: 10px;
   line-height: 20px;
+}
+
+.volume-slider {
+    max-width: 50px;
+    max-height:50px;
 }
 
 .sidebarTabs {
@@ -235,6 +249,7 @@ body, html {
   position: relative;
   border-radius: 10px;
   margin-bottom: 10px;
+  z-index: 90;
 }
 
 .addTrack {
@@ -256,17 +271,40 @@ body, html {
 }
 
 .trackBox {
-  height: 82px;
+  height: 90px;
+  margin-top: 10px;
+  padding-bottom: 5px !important;
+  margin-bottom: -10px !important;
+  margin-left: -15px;
   position: relative;
-  border-radius: 10px;
+  border-radius: 0px;
   margin-bottom: 10px;
-  padding: 10px;
+  width: 160px;
+  padding-left: 5px;
 }
 
 .timeline {
   height: 40px;
-  margin-bottom: 10px;
+  padding: 0 5px 0 5px;
+  margin-bottom: 5px;
   border-radius: 10px;
+  margin-left: 90px;
+  width: 118%;
+  max-width: 118%;
+}
+
+.tcontrols {
+    margin-bottom: -37px;
+}
+
+.timeline_pull {
+  padding-top: 5px;;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  margin-left: -15px;
+  padding-left: 15px;
 }
 
 .ui-resizable-helper {
