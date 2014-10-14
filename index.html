@@ -244,8 +244,41 @@
             </ul>          
 		</div>
           </div>
-          <div class="col-md-9 scrollable dawcontent">10</div>
-          <div class="col-md-1 rightsidebar">right side</div>
+          <div class="col-md-10 scrollable dawcontent">
+              <!-- Start Timeline / DAW Contents -->
+              <div id="tracks" class="span9 scrollable">
+                    <div class="row-fluid">
+                        <div class="span1" style="position:relative;">
+                            <div id="clock" class="clock"></div>
+                        </div>
+                         <div class="span1" >
+                            <div id="zoom">
+                                <div class="btn-toolbar">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-mini" id = "zoomOut">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-mini" id = "zoomIn">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span10 timeline">
+                            <canvas id="timeline" width="500" height="20" style="padding-top:10px;">
+                                
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-1 rightsidebar">right side
+                <div id="newTrackButton" class="span9 addTrack">
+                    <a id="addTrackButton" href="#"><p class="text-center"><i class="fa fa-plus fa-2x plusButton"></i></p></a>
+                </div>
+            </div>
         </div>
       </div> <!-- End Content -->
 
