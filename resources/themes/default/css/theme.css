@@ -129,3 +129,87 @@ body, html {
   border: 1px solid #e3e3e3;
   border-radius: 10px;
 }
+
+#left ul.nav li a:hover .lbl {
+  color: #000 !important;
+    background: #c6c6c6; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c6c6c6 0%, #cecece 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, top, bottom, color-stop(0%,#c6c6c6), color-stop(100%,#cecece)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c6c6c6 0%,#cecece 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c6c6c6 0%,#cecece 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c6c6c6 0%,#cecece 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #c6c6c6 0%,#cecece 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#cecece',GradientType=0 ); /* IE6-9 */
+}
+
+#left ul.nav li.current > a .lbl {
+  background-color: #999;
+  color: #fff !important;
+}
+
+#left ul.nav li.parent a {
+  padding: 0px;
+  color: #000000;
+}
+
+#left ul.nav > li.parent > a {
+  margin-top: -1px;
+  margin-bottom: -2px !important;
+  border-bottom: solid 1px #999999;
+  border-top: solid 1px #999;
+  text-transform: uppercase;
+  color: #000000;
+  background: #dedede;
+}
+
+#left ul.nav li.parent a:hover, #left ul.nav li.parent a:focus {
+    background: #c6c6c6; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c6c6c6 0%, #cecece 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, top, bottom, color-stop(0%,#c6c6c6), color-stop(100%,#cecece)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c6c6c6 0%,#cecece 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c6c6c6 0%,#cecece 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c6c6c6 0%,#cecece 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #c6c6c6 0%,#cecece 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#cecece',GradientType=0 ); /* IE6-9 */
+
+}
+
+#left ul.nav li.parent ul li a {
+  color: #222;
+  border: none;
+  display: block;
+  padding-left: 5px;
+  margin-left: -12px;
+  padding-left: 12px;
+  margin-bottom: -2px;
+}
+
+#left ul.nav li.parent ul li a:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
+#left ul.nav li .sign {
+  display: inline-block;
+  width: 14px;
+  padding: 5px 8px;
+  background-color: transparent;
+  color: #000000;
+}
+
+#left ul.nav li.parent > a > .sign {
+  margin-left: 0px;
+}
+
+#left ul.nav li .lbl {
+  padding: 5px 12px;
+  display: inline-block;
+}
+
+#left ul.nav li.current > a > .lbl {
+  color: #fff;
+}
+
+#left ul.nav li a .lbl {
+  font-size: 12px;
+}
