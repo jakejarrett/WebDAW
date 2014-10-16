@@ -106,13 +106,19 @@ body, html {
 }
 
 .addTrack:hover {
-    transition: background .5s;
     background-color: #cccccc;
+    -webkit-transition: background-color .5s linear;
 }
 
 .plusButton:hover {
     transition: color .5s;
     color: #ffffff;
+    -webkit-animation: spin .25s 0 linear;
+}
+
+@-webkit-keyframes spin {
+	0%  {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(-90deg);}	
 }
 
 .trackBox {

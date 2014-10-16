@@ -129,7 +129,14 @@ body, html {
 .plusButton:hover {
     transition: color .5s;
     color: #5fafe4;
+    -webkit-animation: spin .25s 0 linear;
 }
+
+@-webkit-keyframes spin {
+	0%  {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(-90deg);}	
+}
+
 
 .trackBox {
   height: 90px;
