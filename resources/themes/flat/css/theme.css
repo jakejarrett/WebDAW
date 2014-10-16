@@ -18,16 +18,16 @@ body, html {
 }
 .navbar-inverse .navbar-nav > .open > a {
   color: #FFFFFF;
-  background: #00acdd;
+  background: #5fafe4;
 }
 .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
   color: #FFFFFF;
-  background: #00acdd;
+  background: #5fafe4;
 }
 
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus {
   color: #FFFFFF;
-  background-color: #00acdd;
+  background-color: #5fafe4;
 }
 
 .dropdown-menu {
@@ -36,13 +36,13 @@ body, html {
 
 .dropdown-submenu:hover > a {
   color: #FFFFFF;
-  background-color: #00acdd;
+  background-color: #5fafe4;
 }
 
 .navbar-inverse {
-  background: #00acdd;
+  background: #5fafe4;
   border-bottom: 1px solid;
-  border-color: #009bc7;
+  border-color: #6eb4e5;
 }
 .navbar-inverse .fa {
   color: #FFFFFF;
@@ -110,4 +110,39 @@ body, html {
 
 .modal-content {
   border-radius: 0px;
+}
+
+.track {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+}
+
+.addTrack {
+  border-left: 1px solid #e6f0f5;
+  background-color: #ffffff;
+}
+
+.plusButton {
+    color: #cccccc;
+}
+
+.plusButton:hover {
+    transition: color .5s;
+    color: #5fafe4;
+}
+
+.trackBox {
+  height: 90px;
+  position: relative;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e6f0f5;
+  padding-right: 0px;
+}
+
+.timeline {
+  height: 40px;
+  margin-bottom: 10px;
+  background-color: #e5e5e5;
+  border: 1px solid #c5c5c5;
+  border-radius: 10px;
 }

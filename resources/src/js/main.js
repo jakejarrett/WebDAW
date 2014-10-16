@@ -175,7 +175,7 @@ var wavesurfer = (function () {
             processData(JSON.parse(this.responseText));
         }
     };
-    xhr.open('GET', 'src/data/samples.json');
+    xhr.open('GET', 'resources/src/data/samples.json');
     xhr.send();
 }());
 
@@ -660,7 +660,8 @@ $(document).ready(function(){
 });
 
 function createTrack(trackNumber){
-    $("#tracks").append("<div class=\"row-fluid\" id=\"selectTrack"+trackNumber+"\"><div class=\"span2 trackBox\" style=\"height: 84px;\"><p style=\"margin: 0 0 0 0;\" id=\"track"+trackNumber+"title\">Track"+trackNumber+"</p><div style=\"margin: 5px 0 5px 0;\" id=\"volumeSlider"+trackNumber+"\"></div><div class=\"btn-toolbar\" style=\"margin-top: 0px;\"><div class=\"btn-group\"><button type=\"button\" class=\"btn btn-mini\" id = \"solo"+trackNumber+"\"><i class=\"icon-headphones\"></i></button><button type=\"button\" class=\"btn btn-mini\" id = \"mute"+trackNumber+"\"><i class=\"icon-volume-off\"></i></button></div><div class=\"btn-group\"><button type=\"button\" class=\"btn btn-mini\" data-toggle=\"button\" id = \"record"+trackNumber+"\"><i class=\"icon-plus-sign\"></i></button></div></div></div><div id=\"track"+trackNumber+"\" class=\"span10 track\"></div></div>");
+    $("#tracks").append("<div id=\"track"+trackNumber+"\" class=\"span10 track\"></div>");
+    $("#trackcontrols").append("<div class=\"row-fluid\" id=\"selectTrack"+trackNumber+"\"><div class=\"span2 trackBox\"><p class=\"trackID \" id=\"track"+trackNumber+"title\">Track"+trackNumber+"</p><div class=\"volume-slider\" id=\"volumeSlider"+trackNumber+"\"></div><div class=\"btn-toolbar\" style=\"margin-top: 0px;\"><div class=\"btn-group\"><button type=\"button\" class=\"btn btn-mini\" id = \"solo"+trackNumber+"\"><i class=\"fa fa-headphones\"></i></button><button type=\"button\" class=\"btn btn-mini\" id = \"mute"+trackNumber+"\"><i class=\"fa fa-volume-off\"></i></button><button type=\"button\" class=\"btn btn-mini\" data-toggle=\"button\" id = \"remove"+trackNumber+"\"><i class=\"fa fa-minus\"></i></button></div><div class=\"btn-group\"><button type=\"button\" class=\"btn btn-mini\" data-toggle=\"button\" id = \"record"+trackNumber+"\"><i class=\"fa fa-microphone\"></i></button></div></div></div></div>");
     if(effects[trackNumber-1] == null){
 	effects[trackNumber-1] = [];
     }
