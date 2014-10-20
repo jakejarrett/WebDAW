@@ -1,5 +1,5 @@
 /* 
-    Core will replace main.js, But shouldn't take on as many roles as main.js did (You talk to core.js to get in contact with whatever plugin does X or Y)
+    Core will replace main.js, But shouldn't take on as many roles as main.js did/does (You talk to core.js to get in contact with whatever plugin does X or Y)
 */
 
 var ac = new (window.AudioContext || window.webkitAudioContext);
