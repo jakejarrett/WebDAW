@@ -204,19 +204,22 @@ initSched({
     audioContext: ac
 });
 
-
 $('body').bind('playPause-event', function(e){
     schedPlay(ac.currentTime);
 });
+
 $('body').bind('stop-event', function(e){
     schedStop();
 });
+
 $('body').bind('stepBackward-event', function(e){
     schedStepBack(ac.currentTime);
 });
+
 $('body').bind('mute-event', function(e, trackNumber){
     muteTrack(trackNumber);
 });
+
 $('body').bind('solo-event', function(e, trackNumber){
     solo(trackNumber);
 });
@@ -665,6 +668,7 @@ function createTrack(trackNumber){
     if(effects[trackNumber-1] == null){
 	effects[trackNumber-1] = [];
     }
+    
     $("#volumeSlider"+trackNumber).slider({
 	value: 80,
 	orientation: "horizontal",
@@ -677,54 +681,69 @@ function createTrack(trackNumber){
 	    setTrackVolume(muteTrackNumber, ui.value );
 	}
     });
+    
     $("#selectTrack"+trackNumber).click(function(){
-	var printTrackNumber = $(this).attr('id').split('selectTrack')[1];
-	activeTrack = printTrackNumber;
-	//compensation for off by one (track1 = effects[0])
-	$(".effect").addClass("hidden");
-	$.each(effects[activeTrack-1], function(){
-	    var currentEffect = this;
-	    $("#"+currentEffect.type).removeClass("hidden");
-	    if(currentEffect.type == "Compressor"){
-		$("#compressorThresholdKnob").val(currentEffect.threshold).trigger('change');
-		$("#compressorRatioKnob").val(currentEffect.ratio).trigger('change');
-		$("#compressorAttackKnob").val(currentEffect.attack*1000).trigger('change');
-	    }
-	    if(currentEffect.type == "Filter"){
-		$("#filterCutoffKnob").val(currentEffect.cutoff).trigger('change');
-		$("#filterQKnob").val(currentEffect.q).trigger('change');
-		$("#filterTypeKnob").val(currentEffect.filterType).trigger('change');
-	    }
-	    if(currentEffect.type == "Reverb"){
-		$("#reverbWetDryKnob").val(currentEffect.wetDry);
-		$("#reverbIrSelectKnob").val(currentEffect.ir);
+        var printTrackNumber = $(this).attr('id').split('selectTrack')[1];
+        activeTrack = printTrackNumber;
+        //compensation for off by one (track1 = effects[0])
+        $(".effect").addClass("hidden");
+        $.each(effects[activeTrack-1], function(){
+            var currentEffect = this;
+            $("#"+currentEffect.type).removeClass("hidden");
+            if(currentEffect.type == "Compressor"){
+            $("#compressorThresholdKnob").val(currentEffect.threshold).trigger('change');
+            $("#compressorRatioKnob").val(currentEffect.ratio).trigger('change');
+            $("#compressorAttackKnob").val(currentEffect.attack*1000).trigger('change');
+            }
+            if(currentEffect.type == "Filter"){
+            $("#filterCutoffKnob").val(currentEffect.cutoff).trigger('change');
+            $("#filterQKnob").val(currentEffect.q).trigger('change');
+            $("#filterTypeKnob").val(currentEffect.filterType).trigger('change');
+            }
+            if(currentEffect.type == "Reverb"){
+            $("#reverbWetDryKnob").val(currentEffect.wetDry);
+            $("#reverbIrSelectKnob").val(currentEffect.ir);
 
-	    }
-	    if(currentEffect.type == "Delay"){
-		$("#delayTimeKnob").val(currentEffect.time);
-		$("#delayFeedbackKnob").val(currentEffect.feedback);
-		$("#delayWetDryKnob").val(currentEffect.wetDry);
-	    }
-	    if(currentEffect.type == "Tremelo"){
-		$("#tremeloRateKnob").val(currentEffect.rate).trigger('change');
-		$("#tremeloDepthKnob").val(currentEffect.depth).trigger('change');
-	    }
-	});
-	Object.keys(effects[activeTrack-1]);
-	$("#trackEffectsHeader").html("Track "+printTrackNumber);
-	$("#trackEffects").css("display","block");
-	$("#masterControl").css("display","block");
+            }
+            if(currentEffect.type == "Delay"){
+            $("#delayTimeKnob").val(currentEffect.time);
+            $("#delayFeedbackKnob").val(currentEffect.feedback);
+            $("#delayWetDryKnob").val(currentEffect.wetDry);
+            }
+            if(currentEffect.type == "Tremelo"){
+            $("#tremeloRateKnob").val(currentEffect.rate).trigger('change');
+            $("#tremeloDepthKnob").val(currentEffect.depth).trigger('change');
+            }
+        });
+        
+        Object.keys(effects[activeTrack-1]);
+
+        $("#trackEffectsHeader").html("Track "+printTrackNumber);
+
+        $("#trackEffects").css("display","block");
+
+        $("#masterControl").css("display","block");
+
     });
+    
     $("#mute"+trackNumber).click(function(){
 	$(this).button('toggle');
 	var muteTrackNumber = $(this).attr('id').split('mute')[1];
 	$('body').trigger('mute-event', muteTrackNumber);
     });
-     $("#solo"+trackNumber).click(function(){
+    
+    $("#remove"+trackNumber).click(function(){
+        console.log("removed "+trackNumber);
+        $("#track"+trackNumber).remove();
+        $("#selectTrack"+trackNumber).remove();
+    });
+    
+    $("#solo"+trackNumber).click(function(){
 	$(this).button('toggle');
 	var soloTrackNumber = $(this).attr('id').split('solo')[1];
 	$('body').trigger('solo-event', soloTrackNumber);
     });
+    
     $("#record"+trackNumber).click(function(){
 	var recordTrackNumber = $(this).attr('id').split('record')[1];
 	$(this).button('toggle');
@@ -820,9 +839,11 @@ function createTrack(trackNumber){
 	}
 
     });
+    
     $("#track"+trackNumber+"title").storage({
 	storageKey : 'track'+trackNumber
     });
+    
     $( "#track"+trackNumber ).droppable({
 	accept: ".librarySample",
 	drop: function( event, ui ) {
@@ -883,6 +904,7 @@ function createTrack(trackNumber){
 	    }
 	}
     });
+    
 }
 
 function createNodes(numTracks) {

@@ -16,7 +16,7 @@
 
   </head>
   <body>
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
 		  <div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -144,10 +144,10 @@
         <div class="row dawinner">
           <div class="col-md-2 sidebar">
             <div id="left" class="span3">
-            <ul id="instruments-menu" class="nav menu">  
+            <ul id="instruments-menu" class="nav menu" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-8">  
                 <li class="instruments deeper parent">
                     <a class="" href="#">
-                        <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-8" class="sign">Instruments</span>
+                        <span class="sign">Instruments</span>
                     </a>
                     <ul class="children nav-child unstyled small collapse" id="sub-item-8">
                         <li class="item-9 deeper parent">
@@ -194,10 +194,10 @@
                 </li>    			
             </ul> <!-- End Instruments -->
                 
-            <ul id="effects-menu" class="nav menu">
+            <ul id="effects-menu" class="nav menu" data-toggle="effects-collapse" data-parent="#effects-menu" href="#sub-item-8">
                 <li class="effects deeper parent">
                     <a class="" href="#">
-                        <span data-toggle="effects-collapse" data-parent="#effects-menu" href="#sub-item-8" class="sign">Effects</span>
+                        <span class="sign">Effects</span>
                     </a>
                     <ul class="children nav-child unstyled small effects-collapse" id="sub-item-8">
                         <li class="item-9 deeper parent">
@@ -453,6 +453,11 @@
   		  if(key == 79)  // Open Project
   		  {
 
+  		  }
+           
+          if(key == 32)  // Pause/Play
+  		  {
+              $('body').trigger('playPause-event');
   		  }
 
         if(key == 67) // Close Project
