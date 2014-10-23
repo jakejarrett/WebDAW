@@ -1,205 +1,180 @@
 'use strict';
 
 WaveSurfer.Drawer = {
-    defaultParams: {
-        waveColor: '#333',
-        progressColor: '#999',
-        cursorWidth: 1,
-        loadingColor: '#333',
-        loadingBars: 20,
-        barHeight: 1,
-        barMargin: 10,
-        radius: 10
+    init: function (container, params) {
+        this.container = container;
+        this.params = params;
+
+        this.width = 0;
+        this.height = params.height * this.params.pixelRatio;
+
+        this.lastPos = 0;
+
+        this.createWrapper();
+        this.createElements();
     },
 
-    init: function (params) {
-        var my = this;
-        this.params = Object.create(params);
-        Object.keys(this.defaultParams).forEach(function (key) {
-            if (!(key in params)) { params[key] = my.defaultParams[key]; }
+    createWrapper: function () {
+        this.wrapper = this.container.appendChild(
+            document.createElement('wave')
+        );
+        this.style(this.wrapper, {
+            display: 'block',
+            position: 'relative',
+            userSelect: 'none',
+            webkitUserSelect: 'none',
+            height: this.params.height + 'px'
         });
 
-        this.canvas = params.canvas;
-
-        this.width = this.canvas.clientWidth;
-        this.height = this.canvas.clientHeight;
-        this.cc = this.canvas.getContext('2d');
-
-        if (params.image) {
-            this.loadImage(params.image, this.drawImage.bind(this));
-        }
-
-        if (!this.width || !this.height) {
-            console.error('Canvas size is zero.');
-        }
-    },
-
-    getPeaks: function (buffer) {
-        // Frames per pixel
-        var k = buffer.getChannelData(0).length / this.width;
-
-        this.peaks = [];
-        this.maxPeak = -Infinity;
-
-        for (var i = 0; i < this.width; i++) {
-            var sum = 0;
-            for (var c = 0; c < buffer.numberOfChannels; c++) {
-                var chan = buffer.getChannelData(c);
-                var vals = chan.subarray(i * k, (i + 1) * k);
-                var peak = -Infinity;
-                for (var p = 0, l = vals.length; p < l; p++){
-                    if (vals[p] > peak){
-                        peak = vals[p];
-                    }
-                }
-                sum += peak;
-            }
-            this.peaks[i] = sum;
-
-            if (sum > this.maxPeak) {
-                this.maxPeak = sum;
-            }
-        }
-    },
-    
-    progress: function (percents) {
-        this.cursorPos = ~~(this.width * percents);
-        this.redraw();
-    },
-    
-
-    drawBuffer: function (buffer) {
-        this.getPeaks(buffer);
-        this.progress(0);
-    },
-
-    /**
-     * Redraws the entire canvas on each audio frame.
-     */
-    
-    redraw: function () {
-        var my = this;
-        this.clear();
-        this.roundRectangle(0,0,this.width, this.height, this.params.radius);
-        // Draw WebAudio buffer peaks.
-        if (this.peaks) {
-            this.peaks.forEach(function (peak, index) {
-                my.drawFrame(index, peak, my.maxPeak);
+        if (this.params.fillParent || this.params.scrollParent) {
+            this.style(this.wrapper, {
+                width: '100%',
+                overflowX: this.params.hideScrollbar ? 'hidden' : 'auto',
+                overflowY: 'hidden'
             });
-            
-             
-       
-        
-        // Or draw an image.
-        } else if (this.image) {
-            this.drawImage();
         }
 
-        //this.drawCursor();
-    },
-    
-
-    clear: function () {
-        this.cc.clearRect(0, 0, this.width, this.height);
+        this.setupWrapperEvents();
     },
 
-    drawFrame: function (index, value, max) {
-        var w = 1;
-        
-        //subtract radius from height to reduce vertical range
-        var h = Math.round(value * ((this.height-this.params.radius) / max));
-       
-
-        var x = index * w;
-        var y = Math.round((this.height - h) / 2);
-
-        this.cc.fillStyle = this.params.waveColor;
-
-        this.cc.fillRect(x, y, w, h);
-        
-       
+    handleEvent: function (e) {
+        e.preventDefault();
+        var bbox = this.wrapper.getBoundingClientRect();
+        return ((e.clientX - bbox.left + this.wrapper.scrollLeft) / this.wrapper.scrollWidth) || 0;
     },
-    /*
-    drawCursor: function () {
-        var w = this.params.cursorWidth;
-        var h = this.height;
 
-        var x = Math.min(this.cursorPos, this.width - w);
-        var y = 0;
-
-        this.cc.fillStyle = this.params.cursorColor;
-        this.cc.fillRect(x, y, w, h);
-    },
-    */
-
-    /**
-     * Loads and caches an image.
-     */
-    loadImage: function (url, callback) {
+    setupWrapperEvents: function () {
         var my = this;
-        var img = document.createElement('img');
-        var onLoad = function () {
-            img.removeEventListener('load', onLoad);
-            my.image = img;
-            callback(img);
-        };
-        img.addEventListener('load', onLoad, false);
-        img.src = url;
+
+        this.wrapper.addEventListener('click', function (e) {
+            var scrollbarHeight = my.wrapper.offsetHeight - my.wrapper.clientHeight;
+            if (scrollbarHeight != 0) {
+                // scrollbar is visible.  Check if click was on it
+                var bbox = my.wrapper.getBoundingClientRect();
+                if (e.clientY >= bbox.bottom - scrollbarHeight) {
+                    // ignore mousedown as it was on the scrollbar
+                    return;
+                }
+            }
+
+            if (my.params.interact) {
+                my.fireEvent('click', e, my.handleEvent(e));
+            }
+        });
     },
 
-    /**
-     * Draws a pre-drawn waveform image.
-     */
-    drawImage: function () {
-        var cc = this.cc;
-        cc.drawImage(this.image, 0, 0, this.width, this.height);
-        cc.save();
-        cc.globalCompositeOperation = 'source-atop';
-        cc.fillStyle = this.params.progressColor;
-        cc.fillRect(0, 0, this.cursorPos, this.height);
-        cc.restore();
+    drawPeaks: function (peaks, length) {
+        this.resetScroll();
+        this.setWidth(length);
+        if (this.params.normalize) {
+            var max = WaveSurfer.util.max(peaks);
+        } else {
+            max = 1;
+        }
+        this.drawWave(peaks, max);
     },
 
-    drawLoading: function (progress) {
-        var color = this.params.loadingColor;
-        var bars = this.params.loadingBars;
-        var barHeight = this.params.barHeight;
-        var margin = this.params.barMargin;
-        var barWidth = ~~(this.width / bars) - margin;
-        var progressBars = ~~(bars * progress);
-        var y = ~~(this.height - barHeight) / 2;
+    style: function (el, styles) {
+        Object.keys(styles).forEach(function (prop) {
+            if (el.style[prop] != styles[prop]) {
+                el.style[prop] = styles[prop];
+            }
+        });
+        return el;
+    },
 
-        this.cc.fillStyle = color;
-        for (var i = 0; i < progressBars; i += 1) {
-            var x = i * barWidth + i * margin;
-            this.cc.fillRect(x, y, barWidth, barHeight);
+    resetScroll: function () {
+        this.wrapper.scrollLeft = 0;
+    },
+
+    recenter: function (percent) {
+        var position = this.wrapper.scrollWidth * percent;
+        this.recenterOnPosition(position, true);
+    },
+
+    recenterOnPosition: function (position, immediate) {
+        var scrollLeft = this.wrapper.scrollLeft;
+        var half = ~~(this.wrapper.clientWidth / 2);
+        var target = position - half;
+        var offset = target - scrollLeft;
+        var maxScroll = this.wrapper.scrollWidth - this.wrapper.clientWidth;
+
+        if (maxScroll == 0) {
+            // no need to continue if scrollbar is not there
+            return;
+        }
+
+        // if the cursor is currently visible...
+        if (!immediate && -half <= offset && offset < half) {
+            // we'll limit the "re-center" rate.
+            var rate = 5;
+            offset = Math.max(-rate, Math.min(rate, offset));
+            target = scrollLeft + offset;
+        }
+
+        // limit target to valid range (0 to maxScroll)
+        target = Math.max(0, Math.min(maxScroll, target));
+        // no use attempting to scroll if we're not moving
+        if (target != scrollLeft) {
+            this.wrapper.scrollLeft = target;
+        }
+
+    },
+
+    getWidth: function () {
+        return Math.round(this.container.clientWidth * this.params.pixelRatio);
+    },
+
+    setWidth: function (width) {
+        if (width == this.width) { return; }
+
+        this.width = width;
+
+        if (this.params.fillParent || this.params.scrollParent) {
+            this.style(this.wrapper, {
+                width: ''
+            });
+        } else {
+            this.style(this.wrapper, {
+                width: ~~(this.width / this.params.pixelRatio) + 'px'
+            });
+        }
+
+        this.updateWidth();
+    },
+
+    progress: function (progress) {
+        var minPxDelta = 1 / this.params.pixelRatio;
+        var pos = Math.round(progress * this.width) * minPxDelta;
+
+        if (pos < this.lastPos || pos - this.lastPos >= minPxDelta) {
+            this.lastPos = pos;
+
+            if (this.params.scrollParent) {
+                var newPos = ~~(this.wrapper.scrollWidth * progress);
+                this.recenterOnPosition(newPos);
+            }
+
+            this.updateProgress(progress);
         }
     },
-    
-    roundRectangle: function(x, y, w, h, r){
-        
-        
-        
-        //from http://stackoverflow.com/questions/1255512/how-to-draw-a-rounded-rectangle-on-html-canvas
-        this.cc.strokeStyle = this.params.progressColor;
-        this.cc.lineWidth = 1;
-        this.cc.beginPath();
-        this.cc.moveTo(x + r, y);
-        this.cc.lineTo(x + w - r, y);
-        this.cc.quadraticCurveTo(x + w, y, x + w, y + r);
-        this.cc.lineTo(x + w, y + h - r);
-        this.cc.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-        this.cc.lineTo(x + r, y + h);
-        this.cc.quadraticCurveTo(x, y + h, x, y + h - r);
-        this.cc.lineTo(x, y + r);
-        this.cc.quadraticCurveTo(x, y, x + r, y);
-        this.cc.closePath();
-        this.cc.fillStyle = '#E0E0E0';
-        this.cc.fill();
-        
-        this.cc.stroke();
-        
-        
-        
-        }
+
+    destroy: function () {
+        this.unAll();
+        this.container.removeChild(this.wrapper);
+        this.wrapper = null;
+    },
+
+    /* Renderer-specific methods */
+    createElements: function () {},
+
+    updateWidth: function () {},
+
+    drawWave: function (peaks, max) {},
+
+    clearWave: function () {},
+
+    updateProgress: function (position) {}
 };
+
+WaveSurfer.util.extend(WaveSurfer.Drawer, WaveSurfer.Observer);

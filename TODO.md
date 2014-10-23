@@ -19,6 +19,7 @@ What to finish off before starting work on implementing instruments & functional
 * Need to improve performance (Slow even when initializing)
 * Only load things when called? (EG/ don't need all the instruments loaded if you're not using any yet)
 * Improve how themes change (If local, doesn't matter as much, but can be demanding on resources if changing constantly for multiple users)
+* Add Looping to main.js & UI
 
 #### New "Core JS"
 

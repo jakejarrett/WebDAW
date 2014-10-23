@@ -52,7 +52,9 @@
 
   			<ul class="nav navbar-nav projectnav">
   			<li><a id="playPause" href="#"><i class="fa fa-play fa-3"></i></a></li>
-  			<li class="endofcontrols"><a id="stop" href="#"><i class="fa fa-stop fa-3"></i></a></li>
+            <li><a id="stop" href="#"><i class="fa fa-stop fa-3"></i></a></li>
+            <li><a id="step-backward" href="#"><i class="fa fa-step-backward fa-3"></i></a></li>
+  			<li class="endofcontrols"><a id="step-forward" href="#"><i class="fa fa-step-forward fa-3"></i></a></li>
   			<li><a id="undo-recent" href="#"><i class="fa fa-undo fa-3"></i></a></li>
   			<li><a id="redo-recent" href="#"><i class="fa fa-repeat fa-3"></i></a></li>
   			</ul>
@@ -142,118 +144,52 @@
 
       <div class="container-fluid" id="project">
         <div class="row dawinner">
-          <div class="col-md-2 sidebar">
-            <div id="left" class="span3">
-            <ul id="instruments-menu" class="nav menu" data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-8">  
-                <li class="instruments deeper parent">
-                    <a class="" href="#">
-                        <span class="sign">Instruments</span>
-                    </a>
-                    <ul class="children nav-child unstyled small collapse" id="sub-item-8">
-                        <li class="item-9 deeper parent">
+            <div class="col-md-2 sidebar">
+                <div id="left" class="span3">
+                    <ul id="instruments-menu" class="nav menu" data-toggle="collapse" data-parent="#menu-group-1" href="#instruments">  
+                        <li class="instruments deeper parent">
                             <a class="" href="#">
-                                <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-9" class="sign"><i class=""></i></span>
-                                <span class="lbl">Menu 1</span> 
+                                <span class="sign">Instruments</span>
                             </a>
-                            <ul class="children nav-child unstyled small collapse" id="sub-item-9">
-                                <li class="item-10">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 1.1</span>
-                                    </a>
-                                </li>
-                                <li class="item-11">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 1.2</span> 
-                                    </a>
-                                </li>                                
+                            <ul class="children nav-child unstyled small collapse" id="instruments">
+                                List of Instruments (Will be adding some JS Instruments soon)
                             </ul>
-                        </li>
-                        <li class="item-12 deeper parent">
-                            <a class="" href="#">
-                                <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-12" class="sign"><i class="icon-plus icon-white"></i></span>
-                                <span class="lbl">Menu 2</span> 
-                            </a>
-                            <ul class="children nav-child unstyled small collapse" id="sub-item-12">
-                                <li class="item-13">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 2.1</span>                                    
-                                    </a>
-                                </li>
-                                <li class="item-14">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 2.2</span>                                    
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>    			
-            </ul> <!-- End Instruments -->
+                        </li>    			
+                    </ul> <!-- End Instruments -->
                 
-            <ul id="effects-menu" class="nav menu" data-toggle="effects-collapse" data-parent="#effects-menu" href="#sub-item-8">
-                <li class="effects deeper parent">
-                    <a class="" href="#">
-                        <span class="sign">Effects</span>
-                    </a>
-                    <ul class="children nav-child unstyled small effects-collapse" id="sub-item-8">
-                        <li class="item-9 deeper parent">
-                            <a class="" href="#">
-                                <span data-toggle="collapse" data-parent="#effects-menu" href="#sub-item-9" class="sign"></span>
-                                <span class="lbl">Menu 1</span> 
-                            </a>
-                            <ul class="children nav-child unstyled small collapse" id="sub-item-9">
-                                <li class="item-10">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 1.1</span>
-                                    </a>
-                                </li>
-                                <li class="item-11">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 1.2</span> 
-                                    </a>
-                                </li>                                
-                            </ul>
-                        </li>
-                        <li class="item-12 deeper parent">
-                            <a class="" href="#">
-                                <span data-toggle="collapse" data-parent="#menu-group-1" href="#sub-item-12" class="sign"><i class="icon-plus icon-white"></i></span>
-                                <span class="lbl">Menu 2</span> 
-                            </a>
-                            <ul class="children nav-child unstyled small collapse" id="sub-item-12">
-                                <li class="item-13">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 2.1</span>                                    
-                                    </a>
-                                </li>
-                                <li class="item-14">
-                                    <a class="" href="#">
-                                        <span class="sign"><i class="icon-play"></i></span>
-                                        <span class="lbl">Menu 2.2</span>                                    
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> 
-            </ul> <!-- End Effects -->
-		</div>
-          </div> <!-- End Left Sidebar -->
+                    <ul id="effects-menu" class="nav menu" data-toggle="collapse" data-parent="#menu-group-1" href="#effects">  
+                    <li class="instruments deeper parent">
+                        <a class="" href="#">
+                            <span class="sign">Effects</span>
+                        </a>
+                        <ul class="children nav-child unstyled small collapse" id="effects">
+                            List of Effects (will be added later)
+                        </ul>
+                    </li>    			
+                </ul> <!-- End Instruments -->
+
+                    <ul id="library-menu" class="nav menu" data-toggle="collapse" data-parent="#menu-group-1" href="#library">  
+                    <li class="library deeper parent">
+                        <a class="" href="#">
+                            <span class="sign">Library</span>
+                        </a>
+                        <ul class="children nav-child unstyled small collapse" id="library">
+                            List of Samples/Whatever is in /library/ for User
+                        </ul>
+                    </li>    			
+                </ul> <!-- End Instruments -->
+
+                </div>
+            </div> <!-- End Left Sidebar -->
             
-          <div class="col-md-10 scrollable dawcontent">
-              <!-- Start Timeline / DAW Contents -->
-              <div id="tracks" class="span9 scrollable">
+            <div class="col-md-10 scrollable dawcontent">
+                <!-- Start Timeline / DAW Contents -->
+                <div id="tracks" class="span9 scrollable">
                     <div class="row-fluid timeline_pull">
                         <div class="span1" style="position:relative;">
                             <div id="clock" class="clock"></div>
                         </div>
-                         <div class="span1 tcontrols" >
+                        <div class="span1 tcontrols" >
                             <div id="zoom">
                                 <div class="btn-toolbar">
                                     <div class="btn-group">
@@ -269,18 +205,18 @@
                         </div>
                         <div class="span10 timeline">
                             <canvas id="timeline" width="500" height="20" style="padding-top:10px;">
-                                
                             </canvas>
                         </div>
                     </div>
-
                 </div>
-                
             </div> <!-- End Timeline / DAW -->
             
             <div class="col-md-1 rightsidebar">
                 <div id="trackcontrols">
-                    
+                    <div id="masterControl" class="span1 well">
+                    <canvas id="VUmeterCanvas" width="30" height="80" style="display: block;"></canvas>
+                    <div id="masterVolume"></div>
+                </div>
                 </div>
                 <div id="newTrackButton" class="span9 addTrack">
                     <a id="addTrackButton" href="#"><p class="text-center"><i class="fa fa-plus fa-2x plusButton"></i></p></a>
@@ -335,7 +271,7 @@
         </div>
       </div> <!-- End Collaboration (Landing Page) Modal -->
 
-  		<div class="modal fade exit" id="exit" tabindex="-1" role="dialog" aria-labelledby="exitLabel" aria-hidden="true">
+      <div class="modal fade exit" id="exit" tabindex="-1" role="dialog" aria-labelledby="exitLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -357,7 +293,7 @@
       <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
       <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-      <script src="resources/src/jswavesurfer.js"></script>
+      <script src="resources/src/js/wavesurfer.js"></script>
       <script src="resources/src/js/webaudio.js"></script>
       <script src="resources/src/js/drawer.js"></script>
       <script src="resources/src/js/scheduler.js"></script>
@@ -458,6 +394,17 @@
           if(key == 32)  // Pause/Play
   		  {
               $('body').trigger('playPause-event');
+              var pphtml = $("#playPause").html();
+              var play = '<i class="fa fa-play fa-3"></i>';
+              var pause = '<i class="fa fa-pause fa-3"></i>';
+            
+              if(pphtml = '<i class="fa fa-play fa-3"></i>') {
+                  $("#playPause").html('<i class="fa fa-pause fa-3"></i>');
+              }
+              
+              else {
+                $("#playPause").html('<i class="fa fa-play fa-3"></i>');
+              }
   		  }
 
         if(key == 67) // Close Project

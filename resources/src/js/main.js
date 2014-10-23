@@ -216,6 +216,10 @@ $('body').bind('stepBackward-event', function(e){
     schedStepBack(ac.currentTime);
 });
 
+$('body').bind('stepForward-event', function(e){
+    schedStepAhead(ac.currentTime);
+});
+
 $('body').bind('mute-event', function(e, trackNumber){
     muteTrack(trackNumber);
 });
@@ -575,13 +579,35 @@ $(document).ready(function(){
 
     $("#playPause").click(function(){
         $('body').trigger('playPause-event');
+        
+        var pphtml = $("#playPause").html();
+        
+        var play = '<i class="fa fa-play fa-3"></i>';
+        
+        var pause = '<i class="fa fa-pause fa-3"></i>';
+        
+        if(pphtml = play) {
+            $("#playPause").html('<i class="fa fa-pause fa-3"></i>');
+        }
+        
+        else if(pphtml = pause) {
+            $("#playPause").html('<i class="fa fa-play fa-3"></i>');
+        }
     });
+    
     $("#stop").click(function(){
         $('body').trigger('stop-event');
+        $("#playPause").html('<i class="fa fa-play fa-3"></i>');
     });
+    
     $("#step-backward").click(function(){
         $('body').trigger('stepBackward-event');
     });
+    
+    $("#step-forward").click(function(){
+        $('body').trigger('stepForward-event');
+    });
+    
     $("#zoomIn").click(function(){
         $('body').trigger('zoomIn-event');
 	var WavesurferCanvases = $(".sample");
@@ -594,6 +620,7 @@ $(document).ready(function(){
 	    var oldLeft = parseInt($($(wavesurferCanvas).parent()[0]).css("left"));
 	    $($(wavesurferCanvas).parent()[0]).css("left",""+oldLeft*2+"px");
 	});
+        
 	$.each(globalWavesurfers, function(){
 	    var wavesurfer = this;
 	    wavesurfer.drawer.clear();
