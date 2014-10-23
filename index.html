@@ -95,7 +95,7 @@
                 <li><a href="#" data-toggle="modal" data-target="#about">About</a></li>
               </ul>
     			</li>
-    			<li id="fullscreen"><a href="#fullscreen"><i class="fa fa-expand fa-3"></i></a></li>
+    			<li id="fullscreen"><a href="#fullscreen"><i class="fa fa-expand fa-3 icon-fullscreen"></i></a></li>
   			</ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav> <!-- End Navigation -->
@@ -341,6 +341,15 @@
   				}
 
   			}
+            var $this = $(".icon-fullscreen");
+            if ($this.hasClass("fa-expand")) {
+                $this.removeClass("fa-expand").addClass("fa-compress");
+                return;
+            }
+            if ($this.hasClass("fa-compress")) {
+                $this.removeClass("fa-compress").addClass("fa-expand");
+                return;
+            }
   		});
 
   		$( window ).load(function() {
