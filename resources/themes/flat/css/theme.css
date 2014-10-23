@@ -153,3 +153,9 @@ body, html {
   border: 1px solid #c5c5c5;
   border-radius: 10px;
 }
+
+#left ul.nav ul.children {
+    margin-top: -1px;
+    padding: 10px 3px 10px 0px; 
+    background-color: #ecf0f1;
+}
