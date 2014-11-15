@@ -18,7 +18,7 @@ WebDAW is an open source online digital audio workstation (DAW) based on the
 </p>
 
 <p>
-  Note: This project is considered unstable, and should be treated as such.
+  Note: This project has been ported to Node to run native in Windows, Linux & OS X. The pure JS / Web version may get future updates but won't have feature parity.
   <br />
   Do not consider this a finished product.
   <br />
