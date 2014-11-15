@@ -154,8 +154,19 @@ body, html {
   border-radius: 10px;
 }
 
+#left ul.nav li.parent a, #left ul.nav li.parent a {
+    margin-bottom: -2px;
+}
+
 #left ul.nav ul.children {
     margin-top: -1px;
     padding: 10px 3px 10px 0px; 
     background-color: #ecf0f1;
+}
+
+
+.form-control {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #5fafe4;
 }
